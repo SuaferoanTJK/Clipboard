@@ -1,0 +1,45 @@
+@use 'variables' as v; 
+
+/** Media Queries **/
+@mixin mobile{
+    @media (max-width: v.$tablet){
+        @content;
+    }
+}
+@mixin tablet{
+    @media (min-width: v.$tablet){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width: v.$desktop){
+        @content;
+    }
+}
+
+@mixin bg($url){
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+@mixin btn($color){
+    width: 90%;
+    padding: 1.5rem 4rem;
+    margin: 2.5rem auto;
+    border-radius: 5rem;
+    background-color: $color;
+    display: block;
+    text-decoration: none;
+    color: v.$white;
+    box-shadow: 0 1.5rem 2rem lighten($color,35%);
+    @include tablet{
+        display: inline-block;
+        width: unset;
+        margin: 2rem 1rem;
+    }
+    &:hover{
+        cursor: pointer;
+        background-color: lighten($color,5%);
+    }
+}

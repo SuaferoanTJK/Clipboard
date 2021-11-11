@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.clipboard{
+    text-align: center;
+    padding: 10rem 2rem;
+    @include m.tablet{
+        max-width: unset;
+    }
+    &__description{
+        font-size: 1.8rem;
+        @include m.tablet{
+            max-width: 70rem;
+            margin: 2rem auto;
+        }
+    }
+    &__image{
+        padding-top: 5rem;
+        margin: 0 auto;
+    }
+}

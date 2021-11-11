@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.works{
+    &__grid{
+        @include m.tablet{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 1rem;
+        }
+    }
+}
+.work{
+    margin-bottom: 6rem;
+    @include m.desktop{
+        padding: 0 2.5rem;    
+    }
+    &__image{
+        margin: 0 auto;
+        height: 4rem;
+    }
+    &__title{
+        color: v.$darkGrayishBlue;
+        font-weight: 600;
+        font-size: 2.2rem;
+    }
+    &__text{
+        margin-top: 0;
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,24 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.OS{
+    text-align: center;
+    max-width: 30.5rem;
+    margin: 8rem auto;
+    @include m.tablet{
+        max-width: unset;
+        max-width: 60rem;
+    }
+    &__description{
+        padding: 1rem 0 2rem 0;
+        font-size: 1.8rem;
+    }
+    &__button{
+        &--iOS{
+            @include m.btn(v.$strongCyan);
+        }
+        &--Mac{
+            @include m.btn(v.$lightBlue);
+        }
+    }
+}

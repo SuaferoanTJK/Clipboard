@@ -1,0 +1,31 @@
+@use 'variables' as v; 
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}  
+body{
+    font-size: 1.8rem; 
+    font-family: v.$fuentePrincipal;
+}
+.container{
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+h1,h2{
+    color: v.$darkGrayishBlue;
+    font-weight: 600;
+}
+p{
+    color: v.$grayishBlue;
+    font-weight: 400;   
+    font-size: 1.8rem; 
+}

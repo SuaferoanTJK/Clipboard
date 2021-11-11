@@ -1,0 +1,46 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    @include m.bg("../img/bg-header-mobile.png");
+    @include m.tablet{
+        @include m.bg("../img/bg-header-desktop.png");
+    }
+    text-align: center;
+    padding: 10rem 0;
+    &__icon{
+        margin: 0 auto;
+    }
+    &__heading{
+        padding-top: 5rem;
+        font-weight: 600;
+        font-size: 3rem;
+        @include m.tablet{
+            font-size: 4rem;
+        }
+        span{
+            display: block;
+            @include m.tablet{
+                display: inline-block;
+            }
+        }
+    }
+    &__text{
+        padding: .5rem 2.5rem;
+        margin: 1.5rem auto;
+        @include m.tablet{
+            font-size: 2rem;
+            line-height: 1.5;
+            max-width: 75rem;
+            padding-bottom: 1rem;
+        }
+    }
+    &__button{
+        &--iOS{
+            @include m.btn(v.$strongCyan);
+        }
+        &--Mac{
+            @include m.btn(v.$lightBlue);
+        }
+    }
+}

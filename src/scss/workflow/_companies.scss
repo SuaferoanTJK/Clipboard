@@ -1,0 +1,17 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.companies{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    padding: 5rem 0;
+    gap: 5rem;
+    @include m.tablet{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 1rem;
+    }
+    &__image{
+        margin: 0 auto;
+    }
+}

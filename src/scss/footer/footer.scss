@@ -1,0 +1,65 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer{
+    background-color: lighten(v.$grayishBlue,30%);
+    &__grid{
+        margin: 10rem auto 0 auto;
+        padding: 4rem 0;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        align-items: center;
+        @include m.tablet{
+            padding: 2rem 0;
+            grid-template-columns: repeat(6,1fr);
+        }
+    }
+    &__logo{
+        width: 10%;
+        margin: 0 auto;
+        @include m.tablet{
+            width: 30%;
+            margin: 0;
+        }
+    }
+    &__links{
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem 0;
+        @include m.tablet{
+            flex-direction: row;
+            justify-content: space-around;
+            grid-column: 2/5;   
+        }
+    }
+    &__group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.tablet{
+            align-items: flex-start;
+        }
+    }
+    &__link{
+        padding: 1.5rem 0;
+        text-decoration: none;
+        color: v.$darkGrayishBlue;
+        &:hover{
+            color: v.$strongCyan;
+        }
+    }
+    &__networks{
+        display: flex;
+        margin: 2rem auto;
+        gap: 2rem;
+        @include m.tablet{
+            align-items: center;
+            grid-column: 6/7;
+        }
+    }
+    &__icon{
+        &:hover{
+            filter: invert(75%) sepia(70%) saturate(300%) hue-rotate(100deg) brightness(95%) contrast(100%);
+        }
+    }
+}
